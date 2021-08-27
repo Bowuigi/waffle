@@ -2,10 +2,10 @@
 
 CC=cc
 CFLAGS=-Os -std=c99
-LDFLAGS=$(shell pkg-config --cflags --libs luajit) -lm -ldl
+LDFLAGS=-lm -ldl $(shell pkg-config --cflags --libs luajit)
 PREFIX=/usr/local
 OUT=waffle
-FILES=$(wildcard *.c)
+FILES=main.c
 
 build:
 	$(CC) $(CFLAGS) $(FILES) $(LDFLAGS) -o $(OUT)
