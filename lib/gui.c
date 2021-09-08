@@ -1,4 +1,5 @@
 // GLFW includes
+//#include "glad/glad.h"
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
@@ -16,6 +17,11 @@ int main() {
 		return 1;
 	}
 
+/*	if (!gladLoadGL()) {
+		fprintf(stderr,"Error: Could not init GLAD");
+		return 1;
+	}
+*/
 	// For error handling
 	glfwSetErrorCallback(error_callback);
 

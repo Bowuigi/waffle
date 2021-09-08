@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
+#include "lib/lua/lua.h"
+#include "lib/lua/lualib.h"
+#include "lib/lua/lauxlib.h"
 
 int main(int argc, char **argv) {
 	// Create a lua state
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
 
 	// Change the package path to load dependencies correctly
-	luaL_dostring(L, "package.path = 'src/?.lua;src/lib/?.lua'");
+	luaL_dostring(L, "package.path = 'src/?.lua;src/lib/?.lua'; package.cpath = 'src/?.so;src/lib/?.so;src/?.dll;src/lib/?.dll'");
 
 	// Execute the file
 	luaL_loadfile(L, "src/main.lua");
