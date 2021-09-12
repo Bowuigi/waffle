@@ -17,16 +17,23 @@ The file tree, for a game called *your_game* would look like this:
 your_game/
 	src/
 		lib/
-			IMPORTANT.txt (contains links to the project pages, mostly to comply with the licenses)
+			IMPORTANT.txt
 			libglad.so
 			libglfw.so
 			libwaffle_gui.so
+			waffle
+				LICENSES/
+					rxi_classic_license
+				log.lua
+				object.lua
+				test.lua
+				tilemap.lua
 		LICENSES/
 			glfw_license
 			lua_license
 			waffle_license
-		main.lua (the main source file)
-	your_game (waffle but renamed)
+		main.lua
+	your_game
 ```
 
 And that is it!

@@ -11,7 +11,7 @@ GAME_NAME=your_game
 
 build:
 	@echo Building the waffle libraries
-	mkdir -p $(GAME_NAME)/src/lib
+	mkdir -p $(GAME_NAME)/src/lib/waffle/
 	touch $(GAME_NAME)/src/main.lua
 	@echo Building glfw
 	rm -rf $(GLFW_LOCATION)
@@ -25,7 +25,9 @@ build:
 	cd lib/extern/lua && make clean && make a
 	@echo Building waffle
 	$(CC) waffle.c -static lib/extern/lua/liblua.a $(LDFLAGS) -o waffle
-	cp waffle $(GAME_NAME)/waffle
+	cp waffle $(GAME_NAME)/$(GAME_NAME)
 	cp lib/IMPORTANT.txt $(GAME_NAME)/src/lib/IMPORTANT.txt
 	cp -r LICENSES $(GAME_NAME)/src/LICENSES
+	cp lib/std/*.lua $(GAME_NAME)/src/lib/waffle/
+	cp -r lib/std/LICENSES $(GAME_NAME)/src/lib/waffle/LICENSES
 	@echo Done
