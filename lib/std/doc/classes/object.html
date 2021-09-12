@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Waffle Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Waffle</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><strong>object</strong></li>
+  <li><a href="../classes/tilemap.html">tilemap</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/log.html">log</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>object</code></h1>
+<p>A fork of rxi/classic with more features</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>License</strong>: GNU GPLv3</li>
+        <li><strong>Author</strong>: Bowuigi,rxi</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Object:new">Object:new ()</a></td>
+	<td class="summary">Object new function, should not be called directly
+ <br>
+ The one from object itself is empty.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Object:extend">Object:extend ()</a></td>
+	<td class="summary">Object extend function, adds inheritance</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Object:implement">Object:implement (...)</a></td>
+	<td class="summary">Mixins implementation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Object:is">Object:is (O)</a></td>
+	<td class="summary">Check if the supplied argument is an instance of a class</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Object:__tostring">Object:__tostring ()</a></td>
+	<td class="summary">Return a string representation of the object
+ <br>
+ Added as a metamethod to be called automatically when you call <a href="https://www.lua.org/manual/5.1/manual.html#pdf-print">print</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Object:instance">Object:instance (args)</a></td>
+	<td class="summary">Instance a class or an object</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Object.__call">Object.__call</a></td>
+	<td class="summary">Allow using <code>Object()</code> and <code>Object:instance()</code></td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "Object:new"></a>
+    <strong>Object:new ()</strong>
+    </dt>
+    <dd>
+    Object new function, should not be called directly
+ <br>
+ The one from object itself is empty.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Object:extend"></a>
+    <strong>Object:extend ()</strong>
+    </dt>
+    <dd>
+    Object extend function, adds inheritance
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/object.html#">object</a></span>
+        Object returned
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Object:implement"></a>
+    <strong>Object:implement (...)</strong>
+    </dt>
+    <dd>
+    Mixins implementation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+            <span class="types"><a class="type" href="../classes/object.html#">object</a></span>
+         Objects that contain the new functions
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Object:is"></a>
+    <strong>Object:is (O)</strong>
+    </dt>
+    <dd>
+    Check if the supplied argument is an instance of a class
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">O</span>
+            <span class="types"><a class="type" href="../classes/object.html#">object</a></span>
+         Object to compare with
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        True if O shares metatables with the Object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Object:__tostring"></a>
+    <strong>Object:__tostring ()</strong>
+    </dt>
+    <dd>
+    Return a string representation of the object
+ <br>
+ Added as a metamethod to be called automatically when you call <a href="https://www.lua.org/manual/5.1/manual.html#pdf-print">print</a>
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        String representation of the object
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Object:instance"></a>
+    <strong>Object:instance (args)</strong>
+    </dt>
+    <dd>
+    Instance a class or an object
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">args</span>
+         Arguments to pass to the new function
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Object.__call"></a>
+    <strong>Object.__call</strong>
+    </dt>
+    <dd>
+    Allow using <code>Object()</code> and <code>Object:instance()</code>
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-09-12 16:48:27 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

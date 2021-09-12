@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Waffle Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Waffle</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>log</strong></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/object.html">object</a></li>
+  <li><a href="../classes/tilemap.html">tilemap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>log</code></h1>
+<p>Logging module</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>License</strong>: GNU GPLv3</li>
+        <li><strong>Author</strong>: Bowuigi</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#init">init (settings)</a></td>
+	<td class="summary">Initializes the logging library with the given values (or the default ones if those are nil)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#error">error (context, message)</a></td>
+	<td class="summary">Outputs an error to the log file and exits with status code 1</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#warning">warning (context, message)</a></td>
+	<td class="summary">Outputs a warning to the log file</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#settings">settings</a></td>
+	<td class="summary">Log settings used to configure the logging functions</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "init"></a>
+    <strong>init (settings)</strong>
+    </dt>
+    <dd>
+    Initializes the logging library with the given values (or the default ones if those are nil)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">settings</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Settings for the log functions
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">log.init()</pre></li>
+        <li><pre class="example">log.init({logFile=fileHandler})</pre></li>
+        <li><pre class="example">log.init(log.settings)</pre></li>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "error"></a>
+    <strong>error (context, message)</strong>
+    </dt>
+    <dd>
+    Outputs an error to the log file and exits with status code 1
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Context of the error message
+        </li>
+        <li><span class="parameter">message</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Error message
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">log.<span class="global">error</span>(<span class="string">"Waffle"</span>, <span class="string">"this is a fatal error!"</span>)</pre></li>
+        <li><pre class="example">log.<span class="global">error</span>(<span class="string">"Logger"</span>, <span class="string">"this is another fatal error!"</span>)</pre></li>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "warning"></a>
+    <strong>warning (context, message)</strong>
+    </dt>
+    <dd>
+    Outputs a warning to the log file
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">context</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Context of the warning
+        </li>
+        <li><span class="parameter">message</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Warning message
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">log.warning(<span class="string">"Waffle"</span>, <span class="string">"this is a warning!"</span>)</pre></li>
+        <li><pre class="example">log.warning(<span class="string">"Logger"</span>, <span class="string">"this is another warning!"</span>)</pre></li>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "settings"></a>
+    <strong>settings</strong>
+    </dt>
+    <dd>
+    Log settings used to configure the logging functions
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">dieOnWarning</span>
+        If this is enabled, the program exits with code 1 if a warning is encountered
+        </li>
+        <li><span class="parameter">printWarnings</span>
+        If this is true, warnings will be printed to the log file
+        </li>
+        <li><span class="parameter">logFile</span>
+        File handler to the file to print logs to, standard error by default
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-09-12 16:48:27 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

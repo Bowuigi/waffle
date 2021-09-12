@@ -6,7 +6,7 @@ SHARED_CFLAGS=-shared -fPIC
 LDFLAGS=-lm -ldl
 PREFIX=/usr/local
 CMAKE_DEFOPTS=-D BUILD_SHARED_LIBS=on -D GLFW_BUILD_DOCS=off -D GLFW_BUILD_EXAMPLES=off -D GLFW_BUILD_TESTS=off -D GLFW_INSTALL=off
-GLFW_LOCATION=lib/glfw/build
+GLFW_LOCATION=lib/extern/glfw/build
 GAME_NAME=your_game
 
 build:
@@ -19,12 +19,13 @@ build:
 	cd $(GLFW_LOCATION) && cmake .. $(CMAKE_DEFOPTS) && make
 	cp $(GLFW_LOCATION)/src/libglfw.so $(GAME_NAME)/src/lib/libglfw.so
 	@echo Building glad
-	cc $(CFLAGS) $(LDFLAGS) $(SHARED_CFLAGS) lib/glad/glad.c -o $(GAME_NAME)/src/lib/libglad.so
-	$(CC) $(CFLAGS) $(LDFLAGS) $(SHARED_CFLAGS) -L$(GAME_NAME)/lib -lglfw -lglad lib/gui.c -o $(GAME_NAME)/src/lib/libwaffle_gui.so
-#	$(CC) $(CFLAGS) $(LDFLAGS) $(SHARED_CFLAGS) lib/std.c -o libwaffle_std.so
+	cc $(CFLAGS) $(LDFLAGS) $(SHARED_CFLAGS) lib/extern/glad/glad.c -o $(GAME_NAME)/src/lib/libglad.so
+	$(CC) $(CFLAGS) $(LDFLAGS) $(SHARED_CFLAGS) -L$(GAME_NAME)/src/lib -lglfw -lglad lib/gui.c -o $(GAME_NAME)/src/lib/libwaffle_gui.so
 	@echo Building lua
-	cd lib/lua && make clean && make a
+	cd lib/extern/lua && make clean && make a
 	@echo Building waffle
-	$(CC) waffle.c -static lib/lua/liblua.a $(LDFLAGS) -o waffle
+	$(CC) waffle.c -static lib/extern/lua/liblua.a $(LDFLAGS) -o waffle
 	cp waffle $(GAME_NAME)/waffle
+	cp lib/IMPORTANT.txt $(GAME_NAME)/src/lib/IMPORTANT.txt
+	cp -r LICENSES $(GAME_NAME)/src/LICENSES
 	@echo Done

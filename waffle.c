@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "lib/lua/lua.h"
-#include "lib/lua/lualib.h"
-#include "lib/lua/lauxlib.h"
+#include "lib/extern/lua/lua.h"
+#include "lib/extern/lua/lualib.h"
+#include "lib/extern/lua/lauxlib.h"
 
 int main(int argc, char **argv) {
 	// Create a lua state

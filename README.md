@@ -9,26 +9,24 @@ Waffle is meant to be packaged as easy as possible, so you only need these thing
 - The **waffle** binary (can have any name, including the name of the game)
 - An **src** folder containing main.lua
 - A **lib** folder containing the necessary waffle libraries (it can contain yours too)
-- The folder **LICENSES**, which contains all of the licenses used in waffle and its dependencies (it should also contain yours)
+- The folder **LICENSES**, which contains all of the licenses used in waffle and its dependencies along with a file pointing to the pages where you can find the source code of each one (it should also contain yours)
 
 The file tree, for a game called *your_game* would look like this:
 
 ```
 your_game/
-	your_game (waffle but renamed)
 	src/
-		main.lua
 		lib/
-			libglad.so (required to make the gui library)
-			libglfw.so (required to make the gui library)
-			waffle/
-				*all of the waffle libraries*
+			IMPORTANT.txt (contains links to the project pages, mostly to comply with the licenses)
+			libglad.so
+			libglfw.so
 			libwaffle_gui.so
 		LICENSES/
-			lua_license
 			glfw_license
+			lua_license
 			waffle_license
-			your_game_license
+		main.lua (the main source file)
+	your_game (waffle but renamed)
 ```
 
 And that is it!
@@ -48,3 +46,9 @@ Dependencies
 
 All of those are bundled with waffle, so just running `make` should generate a `your_game` folder that contains the above said folder structure
 
+Documentation
+---
+
+Documentation is generated using [LDoc](https://github.com/lunarmodules/LDoc)
+
+Said documentation is on the **docs** folder on the source tree.

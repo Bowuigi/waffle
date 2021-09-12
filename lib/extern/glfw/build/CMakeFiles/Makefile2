@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mateo/Documentos/C/projects/waffle/lib/glfw
+CMAKE_SOURCE_DIR = /home/mateo/Documentos/C/projects/waffle/lib/extern/glfw
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mateo/Documentos/C/projects/waffle/lib/glfw/build
+CMAKE_BINARY_DIR = /home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -92,14 +92,14 @@ src/clean: src/CMakeFiles/glfw.dir/clean
 src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f src/CMakeFiles/glfw.dir/build.make src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f src/CMakeFiles/glfw.dir/build.make src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateo/Documentos/C/projects/waffle/lib/glfw/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target glfw"
 .PHONY : src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateo/Documentos/C/projects/waffle/lib/glfw/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/CMakeFiles 17
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateo/Documentos/C/projects/waffle/lib/glfw/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.

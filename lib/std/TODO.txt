@@ -1,0 +1,63 @@
+[X] Error handling module
+	[X] init(settings:table)
+	[X] warning(context:string, warning:string)
+	[X] error(context:string, error:string)
+
+[X] Tilemap module (complete rewrite of Bowuigi/tmap)
+	[X] new(width:number, height:number) | waffle.tilemap(width:number, height:number)
+	[X] tostring() (Used by default on print)
+	[X] tileExists(x:number, y:number)
+	[X] tileOnBounds(x:number, y:number)
+	[X] getTile(x:number,y:number,tile:any)
+	[X] setTile(x:number,y:number,tile:any)
+	[X] fillTiles(startX:number, startY:number, endX:number, endY:number, fill:any)
+	[X] copy()
+
+[X] Class module (uses a modified version of rxi/classic)
+	[X] instance() | waffle.class()
+	[X] new()
+	[X] extend()
+	[X] tostring()
+
+[ ] String Parser module (from Bowuigi/genpar+some extensions)
+	[ ] find(property:string | number, value:any)
+	[ ] parse(str:string, tokens:table, result:table)
+	[ ] filter(str:string, tokens:table, result:string)
+
+[ ] Objects on the game engine (and their constructors)
+	[ ] Vector2(x:number, y:number)
+	[ ] Vector3(x:number, y:number, z:number)
+	[ ] Base(onCreate:function, onDestroy:function)
+
+[ ] 2D Objects
+	[ ] Thing2D:extends(Base) (position:Object(Vector2), rotation:number, speed:Object(Vector2))
+	[ ] Line2D:extends(Thing2D) (position:Object(Vector2), length:Object(Vector3), rotation:number, speed:Object(Vector2))
+	[ ] Rectangle:extends(Thing2D) (position:Object(Vector2), size:Object(Vector2), rotation:number, speed:Object(Vector2))
+	[ ] Circle:extends(Thing2D) (position:Object(Vector2), radius:number, rotation:number, speed:Object(Vector2))
+
+[ ] 3D Objects
+	[ ] Thing3D:extends(Base) (position:Object(Vector3), rotation:Object(Vector3), speed:Object(Vector3))
+	[ ] Line2D:extends(Thing2D) (position:Object(Vector3), length:Object(Vector3), rotation:Object(Vector3), speed:Object(Vector3))
+	[ ] Cube:extends(Thing3D) (position:Object(Vector3), size:Object(Vector3), rotation:Object(Vector3), speed:Object(Vector3))
+	[ ] Sphere:extends(Thing3D) (position:Object(Vector3), radius:number, rotation:Object(Vector3), speed:Object(Vector3))
+
+[ ] Expect module
+	[ ] type(expectedType:string, got:any) | waffle.expect(expectedType:string, got:any)
+	[ ] table(expectedSize:table, gotSize:table)
+	[ ] string(expectedLength:number, gotLength:number)
+
+[ ] Math module
+	[ ] dist(a:Object(Vector2), b:Object(Vector2))
+	[ ] dist3D(a:Object(Vector3),  b:Object(Vector3))
+	[ ] clamp(min:number, value:number, max:number)
+	[ ] lerp(start:number, current:number, end:number)
+	[ ] cerp(start:number, current:number, end:number)
+	[ ] sign(num:number)
+
+[ ] Collisions module
+	[ ] circular(a:Object(Circle), b:Object(Circle))
+	[ ] rectangle(a:Object(Rectangle), b:Object(Rectangle))
+	[ ] pointIn.circle(point:Object(Point2), circle:Object(Circle))
+	[ ] pointIn.rectangle(point:Object(Point2), rectangle:Object(Rectangle))
+	[ ] intersect(a:Object(Segment2), b:Object(Segment2))
+
