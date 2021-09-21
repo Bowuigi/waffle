@@ -58,7 +58,7 @@ end
 
 --- Copy a tilemap to another one.
 -- <br>
--- Be aware that this creates a tilemap that gets returned
+-- Be aware that this creates a new tilemap
 -- @treturn tilemap Copy of the tilemap
 function tilemap:copy()
 	local tmp = tilemap(self.width, self.height, nil)
@@ -72,16 +72,30 @@ function tilemap:copy()
 	return tmp
 end
 
+--- Check if a tile exists on the given tilemap
+-- @tparam number x X position of the tile
+-- @tparam number y Y position of the tile
+-- @treturn boolean True if the tile exists, false otherwise
 function tilemap:tileExists(x, y)
 	return (self.tilemap[floor(y)][floor(x)] ~= nil)
 end
 
+--- Check if a position is inside the tilemap
+-- @tparam number x X position of the tile
+-- @tparam number y Y position of the tile
+-- @treturn boolean True if the tile is inside of the tilemap bounds, false otherwise.
 function tilemap:tileOnBounds(x, y)
 	local tx = floor(x)
 	local ty = floor(y)
 	return (tx > 0 and tx <= self.width) and (ty > 0 and ty <= self.height)
 end
 
+--- Get a certain tile of the tilemap
+-- <br>
+-- If no tile is found at the position, nil is returned and a warning is emitted
+-- @tparam number x X position to get the tile from
+-- @tparam number y Y position to get the tile from
+-- @return Tile obtained or nil if no tile was found
 function tilemap:getTile(x, y)
 	local tx = floor(x)
 	local ty = floor(y)
@@ -94,6 +108,13 @@ function tilemap:getTile(x, y)
 	return nil
 end
 
+--- Set a tile on the tilemap
+-- <br>
+-- If the tile is not on bounds then false is returned and a warning is emitted.
+-- @tparam number x X position where the tile goes
+-- @tparam number y Y position where the tile goes
+-- @param tile Tile inserted at the position
+-- @treturn boolean True if the tile could be set, false otherwise
 function tilemap:setTile(x, y, tile)
 	local tx = floor(x)
 	local ty = floor(y)
@@ -109,10 +130,18 @@ function tilemap:setTile(x, y, tile)
 	return false
 end
 
+--- Fill the tiles on a tilemap (make a rectangle) with the given value
+-- <br>
+-- If any of the positions in between those values is out of bounds, a warning is emitted.
+-- @tparam number startX X position to start with
+-- @tparam number startY Y position to start with
+-- @tparam number endX X position to go to
+-- @tparam number endY Y position to go to
+-- @param fill Tile to fill with (can have any type)
 function tilemap:fillTiles(startX, startY, endX, endY, fill)
 	local sX = floor(startX)
-	local eX = floor(endY)
-	local sY = floor(startX)
+	local eX = floor(endX)
+	local sY = floor(startY)
 	local eY = floor(endY)
 
 	for y=sY, eY do

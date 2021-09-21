@@ -55,3 +55,6 @@ dkms.conf
 # Games
 your_game/
 src/
+
+# Build stuff
+lib/extern/glfw/build/

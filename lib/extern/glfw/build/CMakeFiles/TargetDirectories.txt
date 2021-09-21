@@ -1,5 +1,0 @@
-/home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/CMakeFiles/rebuild_cache.dir
-/home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/CMakeFiles/edit_cache.dir
-/home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/src/CMakeFiles/rebuild_cache.dir
-/home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/src/CMakeFiles/edit_cache.dir
-/home/mateo/Documentos/C/projects/waffle/lib/extern/glfw/build/src/CMakeFiles/glfw.dir

@@ -45,6 +45,8 @@
 </ul>
 <h2>Modules</h2>
 <ul class="nowrap">
+  <li><a href="../modules/expect.html">expect</a></li>
+  <li><a href="../modules/extras.html">extras</a></li>
   <li><a href="../modules/log.html">log</a></li>
 </ul>
 
@@ -82,6 +84,32 @@
 	<tr>
 	<td class="name" nowrap><a href="#tilemap:copy">tilemap:copy ()</a></td>
 	<td class="summary">Copy a tilemap to another one.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tilemap:tileExists">tilemap:tileExists (x, y)</a></td>
+	<td class="summary">Check if a tile exists on the given tilemap</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tilemap:tileOnBounds">tilemap:tileOnBounds (x, y)</a></td>
+	<td class="summary">Check if a position is inside the tilemap</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tilemap:getTile">tilemap:getTile (x, y)</a></td>
+	<td class="summary">Get a certain tile of the tilemap
+ <br>
+ If no tile is found at the position, nil is returned and a warning is emitted</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tilemap:setTile">tilemap:setTile (x, y, tile)</a></td>
+	<td class="summary">Set a tile on the tilemap
+ <br>
+ If the tile is not on bounds then false is returned and a warning is emitted.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tilemap:fillTiles">tilemap:fillTiles (startX, startY, endX, endY, fill)</a></td>
+	<td class="summary">Fill the tiles on a tilemap (make a rectangle) with the given value
+ <br>
+ If any of the positions in between those values is out of bounds, a warning is emitted.</td>
 	</tr>
 </table>
 <h2><a href="#Metamethods">Metamethods</a></h2>
@@ -156,7 +184,7 @@
     <dd>
     Copy a tilemap to another one.
  <br>
- Be aware that this creates a tilemap that gets returned
+ Be aware that this creates a new tilemap
 
 
 
@@ -166,6 +194,174 @@
            <span class="types"><a class="type" href="../classes/tilemap.html#">tilemap</a></span>
         Copy of the tilemap
     </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tilemap:tileExists"></a>
+    <strong>tilemap:tileExists (x, y)</strong>
+    </dt>
+    <dd>
+    Check if a tile exists on the given tilemap
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X position of the tile
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position of the tile
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        True if the tile exists, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tilemap:tileOnBounds"></a>
+    <strong>tilemap:tileOnBounds (x, y)</strong>
+    </dt>
+    <dd>
+    Check if a position is inside the tilemap
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X position of the tile
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position of the tile
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        True if the tile is inside of the tilemap bounds, false otherwise.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tilemap:getTile"></a>
+    <strong>tilemap:getTile (x, y)</strong>
+    </dt>
+    <dd>
+    Get a certain tile of the tilemap
+ <br>
+ If no tile is found at the position, nil is returned and a warning is emitted
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X position to get the tile from
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position to get the tile from
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Tile obtained or nil if no tile was found
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tilemap:setTile"></a>
+    <strong>tilemap:setTile (x, y, tile)</strong>
+    </dt>
+    <dd>
+    Set a tile on the tilemap
+ <br>
+ If the tile is not on bounds then false is returned and a warning is emitted.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X position where the tile goes
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position where the tile goes
+        </li>
+        <li><span class="parameter">tile</span>
+         Tile inserted at the position
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        True if the tile could be set, false otherwise
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tilemap:fillTiles"></a>
+    <strong>tilemap:fillTiles (startX, startY, endX, endY, fill)</strong>
+    </dt>
+    <dd>
+    Fill the tiles on a tilemap (make a rectangle) with the given value
+ <br>
+ If any of the positions in between those values is out of bounds, a warning is emitted.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">startX</span>
+            <span class="types"><span class="type">number</span></span>
+         X position to start with
+        </li>
+        <li><span class="parameter">startY</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position to start with
+        </li>
+        <li><span class="parameter">endX</span>
+            <span class="types"><span class="type">number</span></span>
+         X position to go to
+        </li>
+        <li><span class="parameter">endY</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position to go to
+        </li>
+        <li><span class="parameter">fill</span>
+         Tile to fill with (can have any type)
+        </li>
+    </ul>
+
 
 
 
@@ -204,7 +400,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2021-09-12 16:48:27 </i>
+<i style="float:right;">Last updated 2021-09-21 18:07:21 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

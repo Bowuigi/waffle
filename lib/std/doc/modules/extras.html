@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Waffle Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Waffle</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/expect.html">expect</a></li>
+  <li><strong>extras</strong></li>
+  <li><a href="../modules/log.html">log</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/object.html">object</a></li>
+  <li><a href="../classes/tilemap.html">tilemap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>extras</code></h1>
+<p>A collection of extras for easier development</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>License</strong>: GNU GPLv3</li>
+        <li><strong>Author</strong>: Bowuigi</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#each">each (items, func)</a></td>
+	<td class="summary">Iterate over each item on a loop, calling a function with the key and the current item, like <code>func(key,item)</code></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#eachi">eachi (items, func)</a></td>
+	<td class="summary">Similar to the <a href="../modules/extras.html#each">extras.each</a> function, but only iterates on the numeric indexes and it doesn't call the function using the key, instead it does <code>func(item)</code></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#map">map (items, func)</a></td>
+	<td class="summary">Similar to the <a href="../modules/extras.html#each">extras.each</a> function, but returns a table containing the results of each call, the table uses the same key as in the table, so <code>results[key] = func(key,item)</code></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mapi">mapi (items, func)</a></td>
+	<td class="summary">Similar to the <a href="../modules/extras.html#map">extras.map</a> function, but acts on numerical indexes only like <a href="../modules/extras.html#eachi">extras.eachi</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#inc">inc (number, amount)</a></td>
+	<td class="summary">Increments a copy of the variable by amount or 1 and then returns the result, like <code>var+=1</code> or <code>var++</code></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tableToString">tableToString (t)</a></td>
+	<td class="summary">Returns a string representation of a table</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "each"></a>
+    <strong>each (items, func)</strong>
+    </dt>
+    <dd>
+    Iterate over each item on a loop, calling a function with the key and the current item, like <code>func(key,item)</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Items to loop on
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "eachi"></a>
+    <strong>eachi (items, func)</strong>
+    </dt>
+    <dd>
+    Similar to the <a href="../modules/extras.html#each">extras.each</a> function, but only iterates on the numeric indexes and it doesn't call the function using the key, instead it does <code>func(item)</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Items to loop on
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "map"></a>
+    <strong>map (items, func)</strong>
+    </dt>
+    <dd>
+    Similar to the <a href="../modules/extras.html#each">extras.each</a> function, but returns a table containing the results of each call, the table uses the same key as in the table, so <code>results[key] = func(key,item)</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Items to loop on
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        Return values of each call to the function
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mapi"></a>
+    <strong>mapi (items, func)</strong>
+    </dt>
+    <dd>
+    Similar to the <a href="../modules/extras.html#map">extras.map</a> function, but acts on numerical indexes only like <a href="../modules/extras.html#eachi">extras.eachi</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">items</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Items to loop on
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        Return values of each call to the function
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "inc"></a>
+    <strong>inc (number, amount)</strong>
+    </dt>
+    <dd>
+    Increments a copy of the variable by amount or 1 and then returns the result, like <code>var+=1</code> or <code>var++</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+            <span class="types"><span class="type">number</span></span>
+         Numeric variable to increase value from
+        </li>
+        <li><span class="parameter">amount</span>
+            <span class="types"><span class="type">number</span></span>
+         Optional, increase number by amount given
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        The same number, after increment
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tableToString"></a>
+    <strong>tableToString (t)</strong>
+    </dt>
+    <dd>
+    Returns a string representation of a table
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Table to represent as a string
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        String representation of the table
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-09-21 18:07:21 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
