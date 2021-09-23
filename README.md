@@ -15,23 +15,23 @@ The file tree, for a game called *your_game* would look like this:
 
 ```
 your_game/
-	src/
-		lib/
-			IMPORTANT.txt
-			libglad.so
-			libglfw.so
-			libwaffle_gui.so
-			waffle
-				LICENSES/
-					rxi_classic_license
-				log.lua
-				object.lua
-				test.lua
-				tilemap.lua
+	lib/
+		IMPORTANT.txt
+		libglad.so
+		libglfw.so
+		libwaffle_gui.so
 		LICENSES/
 			glfw_license
 			lua_license
+			rxi_classic_license
 			waffle_license
+		waffle/
+			expect.lua
+			extras.lua
+			log.lua
+			object.lua
+			tilemap.lua
+	src/
 		main.lua
 	your_game
 ```

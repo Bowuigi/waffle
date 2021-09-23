@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
 
 	// Change the package path to load dependencies correctly
-	luaL_dostring(L, "package.path = 'src/?.lua;src/lib/?.lua'; package.cpath = 'src/?.so;src/lib/?.so;src/?.dll;src/lib/?.dll'");
+	luaL_dostring(L, "package.path = 'src/?.lua;lib/?.lua'; package.cpath = 'src/?.so;lib/?.so;src/?.dll;lib/?.dll'");
 
 	// Execute the file
 	luaL_loadfile(L, "src/main.lua");
