@@ -23,27 +23,27 @@
 	[X] type(expectedType:string, got:any) | waffle.expect(expectedType:string, got:any)
 	[X] length(expectedLength:number, gotLength:number)
 
+[X] Extras module
+	[X] Functions from functional programming
+	[X] Switch/Case statement
+	[X] Select statement
+	[X] Table to string
+
+[X] Base Objects
+	[X] Vector2(x:number, y:number)
+	[X] Vector3(x:number, y:number, z:number)
+	[X] Base(onCreate:function, onDestroy:function)
+
+[ ] 2D Objects
+	[ ] Point:extends(Base) (position:Object(Vector2), rotation:number, speed:Object(Vector2))
+	[ ] Line:extends(Thing) (position:Object(Vector2), length:Object(Vector3), rotation:number, speed:Object(Vector2))
+	[ ] Rectangle:extends(Thing) (position:Object(Vector2), size:Object(Vector2), rotation:number, speed:Object(Vector2))
+	[ ] Circle:extends(Thing) (position:Object(Vector2), radius:number, rotation:number, speed:Object(Vector2))
+
 [ ] String Parser module (from Bowuigi/genpar+some extensions)
 	[ ] find(property:string | number, value:any)
 	[ ] parse(str:string, tokens:table, result:table)
 	[ ] filter(str:string, tokens:table, result:string)
-
-[ ] Objects on the game engine (and their constructors)
-	[ ] Vector2(x:number, y:number)
-	[ ] Vector3(x:number, y:number, z:number)
-	[ ] Base(onCreate:function, onDestroy:function)
-
-[ ] 2D Objects
-	[ ] Thing2D:extends(Base) (position:Object(Vector2), rotation:number, speed:Object(Vector2))
-	[ ] Line2D:extends(Thing2D) (position:Object(Vector2), length:Object(Vector3), rotation:number, speed:Object(Vector2))
-	[ ] Rectangle:extends(Thing2D) (position:Object(Vector2), size:Object(Vector2), rotation:number, speed:Object(Vector2))
-	[ ] Circle:extends(Thing2D) (position:Object(Vector2), radius:number, rotation:number, speed:Object(Vector2))
-
-[ ] 3D Objects
-	[ ] Thing3D:extends(Base) (position:Object(Vector3), rotation:Object(Vector3), speed:Object(Vector3))
-	[ ] Line2D:extends(Thing2D) (position:Object(Vector3), length:Object(Vector3), rotation:Object(Vector3), speed:Object(Vector3))
-	[ ] Cube:extends(Thing3D) (position:Object(Vector3), size:Object(Vector3), rotation:Object(Vector3), speed:Object(Vector3))
-	[ ] Sphere:extends(Thing3D) (position:Object(Vector3), radius:number, rotation:Object(Vector3), speed:Object(Vector3))
 
 [ ] Math module
 	[ ] dist(a:Object(Vector2), b:Object(Vector2))
@@ -58,5 +58,5 @@
 	[ ] rectangle(a:Object(Rectangle), b:Object(Rectangle))
 	[ ] pointIn.circle(point:Object(Point2), circle:Object(Circle))
 	[ ] pointIn.rectangle(point:Object(Point2), rectangle:Object(Rectangle))
-	[ ] intersect(a:Object(Segment2), b:Object(Segment2))
+	[ ] intersect(a:Object(Line), b:Object(Line))
 
