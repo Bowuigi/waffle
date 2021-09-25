@@ -34,11 +34,11 @@
 	[X] Vector3(x:number, y:number, z:number)
 	[X] Base(onCreate:function, onDestroy:function)
 
-[ ] 2D Objects
-	[ ] Point:extends(Base) (position:Object(Vector2), rotation:number, speed:Object(Vector2))
-	[ ] Line:extends(Thing) (position:Object(Vector2), length:Object(Vector3), rotation:number, speed:Object(Vector2))
-	[ ] Rectangle:extends(Thing) (position:Object(Vector2), size:Object(Vector2), rotation:number, speed:Object(Vector2))
-	[ ] Circle:extends(Thing) (position:Object(Vector2), radius:number, rotation:number, speed:Object(Vector2))
+[-] 2D Objects
+	[X] Point:extends(Base) (position:Object(Vector2), rotation:number, speed:Object(Vector2), mass:number)
+	[ ] Line:extends(Base) (position:Object(Vector2), length:Object(Vector3), rotation:number, speed:Object(Vector2), mass:number)
+	[ ] Rectangle:extends(Base) (position:Object(Vector2), size:Object(Vector2), rotation:number, speed:Object(Vector2), mass:number)
+	[ ] Circle:extends(Base) (position:Object(Vector2), radius:number, rotation:number, speed:Object(Vector2), mass:number)
 
 [ ] String Parser module (from Bowuigi/genpar+some extensions)
 	[ ] find(property:string | number, value:any)
