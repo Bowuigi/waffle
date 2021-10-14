@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Waffle Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Waffle</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/class.html">class</a></li>
+  <li><strong>expect</strong></li>
+  <li><a href="../modules/extras.html">extras</a></li>
+  <li><a href="../modules/functional.html">functional</a></li>
+  <li><a href="../modules/log.html">log</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/object.html">object</a></li>
+  <li><a href="../classes/tilemap.html">tilemap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>expect</code></h1>
+<p>Expect module
+ <br>
+ Used when only certain datatypes are required, useful to make the type system in Lua a bit better.</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>License</strong>: GNU GPLv3</li>
+        <li><strong>Author</strong>: Bowuigi</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#type">type (expected, got)</a></td>
+	<td class="summary">Check for type, can also be called with <code>expect(expected, got)</code>
+ <br>
+ On error, the function doesn't return, but it emits an error as if it was a normal lua error.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#length">length (expected, got)</a></td>
+	<td class="summary">Check for length
+ <br>
+ On error, the function doesn't return, but it emits an error as if it was a normal lua error.</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#log">log</a></td>
+	<td class="summary">Use warnings and errors from the log module</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "type"></a>
+    <strong>type (expected, got)</strong>
+    </dt>
+    <dd>
+    Check for type, can also be called with <code>expect(expected, got)</code>
+ <br>
+ On error, the function doesn't return, but it emits an error as if it was a normal lua error.
+ Otherwise, it continues execution normally
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">expected</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string/table</a></span>
+         Expected type, or table containing any of the expected types
+        </li>
+        <li><span class="parameter">got</span>
+         Type received, must be a string and the result of the <code>type()</code> function
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- This expects a string, but gets a number, so it throws an error
+</span>expect(<span class="string">"string"</span>, <span class="global">type</span>(<span class="number">1</span>))
+<span class="comment">-- This expects either a string or a table, but gets a function, so it throws an error
+</span>expect({<span class="string">"string"</span>,<span class="string">"table"</span>},<span class="global">type</span>(<span class="global">print</span>))</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "length"></a>
+    <strong>length (expected, got)</strong>
+    </dt>
+    <dd>
+    Check for length
+ <br>
+ On error, the function doesn't return, but it emits an error as if it was a normal lua error.
+ Otherwise, it continues execution normally
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">expected</span>
+         Expected length, must be a number, otherwise, an error is thrown
+        </li>
+        <li><span class="parameter">got</span>
+         Length received, must be a number, otherwise, an error is thrown
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">expect.length(<span class="number">3</span>,#(<span class="string">"hello"</span>)) <span class="comment">-- Expect an object of length 3, but gets an object of length 5, so it throws an error</span></pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "log"></a>
+    <strong>log</strong>
+    </dt>
+    <dd>
+    Use warnings and errors from the log module
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-10-14 17:27:30 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

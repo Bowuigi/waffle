@@ -4,8 +4,6 @@ This file is required to comply with Waffle's license since it contains the link
 
 Waffle: https://github.com/Bowuigi/Waffle
 
-GLFW: https://glfw.org
-
 Lua: https://lua.org
 
-GLAD/GL: https://glad.dav1d.de
+SDL: https://libsdl.org

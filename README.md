@@ -15,22 +15,21 @@ The file tree, for a game called *your_game* would look like this:
 
 ```
 your_game/
-	lib/
-		IMPORTANT.txt
-		libglad.so
-		libglfw.so
-		libwaffle_gui.so
-		LICENSES/
-			glfw_license
-			lua_license
-			rxi_classic_license
-			waffle_license
-		waffle/
-			expect.lua
-			extras.lua
-			log.lua
-			object.lua
-			tilemap.lua
+ lib/
+	IMPORTANT.txt
+	LICENSES/
+		glfw_license
+		lua_license
+		rxi_classic_license
+		waffle_license
+	waffle/
+		classes.lua
+		expect.lua
+		extras.lua
+		functional.lua
+		log.lua
+		object.lua
+		tilemap.lua
 	src/
 		main.lua
 	your_game
@@ -48,10 +47,9 @@ Dependencies
 ---
 
 - Lua 5.4.3 ([get it here](https://www.lua.org/download.html))
-- glad/gl C 3.3 core  ([get it here](https://glad.dav1d.de/#language=c&specification=gl&api=gl%3D3.3&api=gles1%3Dnone&api=gles2%3Dnone&api=glsc2%3Dnone&profile=core&loader=on&localfiles=on))
-- glfw 3.3.4 ([get it here](https://github.com/glfw/glfw/releases/download/3.3.4/glfw-3.3.4.zip))
+- SDL 2.0 ([get it here](https://libsdl.org/download-2.0.php))
 
-All of those are bundled with waffle, so just running `make` should generate a `your_game` folder that contains the above said folder structure
+Lua is bundled with waffle, but SDL isn't (just so you can provide your own builds), so if you have an SDL build, put the so/dll file on **waffle/lib/extern/SDL/{libSDL2.so, SDL2.dll}** before compiling waffle
 
 Documentation
 ---

@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Waffle Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Waffle</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/class.html">class</a></li>
+  <li><a href="../modules/expect.html">expect</a></li>
+  <li><a href="../modules/extras.html">extras</a></li>
+  <li><strong>functional</strong></li>
+  <li><a href="../modules/log.html">log</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/object.html">object</a></li>
+  <li><a href="../classes/tilemap.html">tilemap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>functional</code></h1>
+<p>A collection of functions from functional programming</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>License</strong>: GNU GPLv3</li>
+        <li><strong>Author</strong>: Bowuigi</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#head">head (list)</a></td>
+	<td class="summary">Get the first element of a list (doesn't make much sense in Lua, but it is here anyway)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#tail">tail (list)</a></td>
+	<td class="summary">Get every element other than the first and build a table with it
+ <br>
+ Note: It will only work with index k,v pairs, like <code>{1,2,3,4}</code>, but not on tables like <code>{bob = 1, anna = 2}</code></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#last">last (list)</a></td>
+	<td class="summary">Get the last element of a list (again this doesn't make much sense in Lua, but here it is)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#compose">compose (func1, func2)</a></td>
+	<td class="summary">Create a function that runs <code>func1(func2(param))</code> when called with a parameter</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#expand">expand (param, times, func)</a></td>
+	<td class="summary">Expand a function into multiple ones and execute them</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fold">fold (sequence, initial, func)</a></td>
+	<td class="summary">Fold a list, similar to expand</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#foldr">foldr (sequence, initial, func)</a></td>
+	<td class="summary">Perform a <a href="../modules/functional.html#fold">fold</a>, but in reverse</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#reduce">reduce (list, func)</a></td>
+	<td class="summary">Reduce a list, equivalent to <code>list:fold(head(list), tail(list))</code>
+ <br>
+ The first value of the list acts as the initial value, the rest is the table to operate on</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#zip">zip (list1, list2)</a></td>
+	<td class="summary">Combine both lists into one of the form {{list[1], list2[1]}, {list[2], list2[2]}...}</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#filter">filter (list, func)</a></td>
+	<td class="summary">Filter a list by passing it into a function</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#each">each (list, func)</a></td>
+	<td class="summary">Run a function for each element on the list without storing the result</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#eachi">eachi (list, func)</a></td>
+	<td class="summary">Run a function for each integer key element on the list without storing the result</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#eachk">eachk (list, func)</a></td>
+	<td class="summary">Run a function for each element on the list without storing the result</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#eachki">eachki (list, func)</a></td>
+	<td class="summary">Run a function for each integer key element on the list without storing the result</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#map">map (list, func)</a></td>
+	<td class="summary">Run a function for each element on the list and store the result</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mapi">mapi (list, func)</a></td>
+	<td class="summary">Run a function for each integer key element on the list and store the result</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mapk">mapk (list, func)</a></td>
+	<td class="summary">Run a function for each element on the list and store the result</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mapki">mapki (list, func)</a></td>
+	<td class="summary">Run a function for each integer key element on the list and store the result</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#first">first</a></td>
+	<td class="summary">first is the same as <a href="../modules/functional.html#head">head</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#rest">rest</a></td>
+	<td class="summary">rest is the same as <a href="../modules/functional.html#tail">tail</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#foldl">foldl</a></td>
+	<td class="summary">foldl is the same as <a href="../modules/functional.html#fold">fold</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#lfold">lfold</a></td>
+	<td class="summary">lfold is the same as <a href="../modules/functional.html#fold">fold</a> and <a href="../modules/functional.html#foldl">foldl</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#rfold">rfold</a></td>
+	<td class="summary">rfold is the same as <a href="../modules/functional.html#foldr">foldr</a></td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+    Methods
+    <dl class="function">
+    <dt>
+    <a name = "head"></a>
+    <strong>head (list)</strong>
+    </dt>
+    <dd>
+    Get the first element of a list (doesn't make much sense in Lua, but it is here anyway)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to operate on
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        First element of the list
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "tail"></a>
+    <strong>tail (list)</strong>
+    </dt>
+    <dd>
+    Get every element other than the first and build a table with it
+ <br>
+ Note: It will only work with index k,v pairs, like <code>{1,2,3,4}</code>, but not on tables like <code>{bob = 1, anna = 2}</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to operate on
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        Table with every element of a list except the first
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">tail({<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>}) <span class="comment">-- {2,3,4}</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "last"></a>
+    <strong>last (list)</strong>
+    </dt>
+    <dd>
+    Get the last element of a list (again this doesn't make much sense in Lua, but here it is)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to operate on
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Last element of the table (with a numeric k,v index pair)
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "compose"></a>
+    <strong>compose (func1, func2)</strong>
+    </dt>
+    <dd>
+    Create a function that runs <code>func1(func2(param))</code> when called with a parameter
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">func1</span>
+            <span class="types"><span class="type">function</span></span>
+         First function in the nested call
+        </li>
+        <li><span class="parameter">func2</span>
+            <span class="types"><span class="type">function</span></span>
+         Second function in the nested call
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">function</span></span>
+        Function returning a nested call in form of <code>function(x) return func1(func2(x)) end</code>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">compose(<span class="global">math</span>.sin, <span class="global">math</span>.abs)(-<span class="number">5</span>) <span class="comment">-- Get the sin of the absolute of -5, AKA math.sin(math.abs(-5)) or math.sin(5)</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "expand"></a>
+    <strong>expand (param, times, func)</strong>
+    </dt>
+    <dd>
+    Expand a function into multiple ones and execute them
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">param</span>
+         Parameter to pass to the functions
+        </li>
+        <li><span class="parameter">times</span>
+            <span class="types"><span class="type">number</span></span>
+         How much times to nest the function
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to use on expansion
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Result of the expansion
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- This is how you would get an index of a linked list, but on Lua (this shouldn't be done, it is just an example)
+</span>expand({<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>}, <span class="number">3</span>, tail) <span class="comment">-- tail(tail(tail({1,2,3,4,5}))) or in it's more readable form, ({1,2,3,4,5}):tail():tail():tail() which resembles UNIX shell pipes
+</span><span class="comment">-- This results in {4,5}, so we just apply head to it
+</span>head(expand({<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>}, <span class="number">3</span>, tail)) <span class="comment">-- This gives us 4</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "fold"></a>
+    <strong>fold (sequence, initial, func)</strong>
+    </dt>
+    <dd>
+    Fold a list, similar to expand
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sequence</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List of items to use as secondary parameters sequentially
+        </li>
+        <li><span class="parameter">initial</span>
+         Initial value for the first argument
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to execute
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Result of the expansion
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">({<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>}):fold(<span class="number">0</span>, sum) <span class="comment">-- 0 | sum 1 | sum 2 | sum 3 // sum(sum(sum(0,1),2),3)</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "foldr"></a>
+    <strong>foldr (sequence, initial, func)</strong>
+    </dt>
+    <dd>
+    Perform a <a href="../modules/functional.html#fold">fold</a>, but in reverse
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sequence</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List of items to use as primary parameters sequentially (but in reverse)
+        </li>
+        <li><span class="parameter">initial</span>
+         Initial value for the second argument
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to execute
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Result of the expansion
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">({<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>}):foldr(<span class="number">4</span>,sum) <span class="comment">-- sum(1,sum(2,sum(3,4)))</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "reduce"></a>
+    <strong>reduce (list, func)</strong>
+    </dt>
+    <dd>
+    Reduce a list, equivalent to <code>list:fold(head(list), tail(list))</code>
+ <br>
+ The first value of the list acts as the initial value, the rest is the table to operate on
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to reduce
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to apply
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Result of the expansion
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">({<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>}):reduce(sum) <span class="comment">-- fold(1,{2,3}) // sum(sum(1,2),3)</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "zip"></a>
+    <strong>zip (list1, list2)</strong>
+    </dt>
+    <dd>
+    Combine both lists into one of the form {{list[1], list2[1]}, {list[2], list2[2]}...}
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list1</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         First list, takes the first place on the resulting list
+        </li>
+        <li><span class="parameter">list2</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Second list, takes the second place on the resulting list
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        List on the form of {{list[1], list2[1]}, {list[2], list2[2]}...}
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">zip({<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>}, {<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>}) <span class="comment">-- {{1,4},{2,5},{3,6}}</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "filter"></a>
+    <strong>filter (list, func)</strong>
+    </dt>
+    <dd>
+    Filter a list by passing it into a function
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to filter
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to filter with
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        Filtered list
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">({<span class="number">1</span>,<span class="number">2</span>,<span class="string">"e"</span>,<span class="number">3</span>,<span class="string">"hi"</span>,{}}):filter(isnumber) <span class="comment">-- {1,2,3}</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "each"></a>
+    <strong>each (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each element on the list without storing the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "eachi"></a>
+    <strong>eachi (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each integer key element on the list without storing the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "eachk"></a>
+    <strong>eachk (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each element on the list without storing the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_key, list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "eachki"></a>
+    <strong>eachki (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each integer key element on the list without storing the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_key, list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "map"></a>
+    <strong>map (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each element on the list and store the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mapi"></a>
+    <strong>mapi (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each integer key element on the list and store the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mapk"></a>
+    <strong>mapk (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each element on the list and store the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_key, list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mapki"></a>
+    <strong>mapki (list, func)</strong>
+    </dt>
+    <dd>
+    Run a function for each integer key element on the list and store the result
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         List to loop
+        </li>
+        <li><span class="parameter">func</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to call on each element in the form of <code>func(list_key, list_value)</code>
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "first"></a>
+    <strong>first</strong>
+    </dt>
+    <dd>
+    first is the same as <a href="../modules/functional.html#head">head</a>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "rest"></a>
+    <strong>rest</strong>
+    </dt>
+    <dd>
+    rest is the same as <a href="../modules/functional.html#tail">tail</a>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "foldl"></a>
+    <strong>foldl</strong>
+    </dt>
+    <dd>
+    foldl is the same as <a href="../modules/functional.html#fold">fold</a>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "lfold"></a>
+    <strong>lfold</strong>
+    </dt>
+    <dd>
+    lfold is the same as <a href="../modules/functional.html#fold">fold</a> and <a href="../modules/functional.html#foldl">foldl</a>
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "rfold"></a>
+    <strong>rfold</strong>
+    </dt>
+    <dd>
+    rfold is the same as <a href="../modules/functional.html#foldr">foldr</a>
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-10-14 17:27:30 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

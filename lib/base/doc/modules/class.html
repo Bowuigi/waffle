@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Waffle Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Waffle</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Fields">Fields</a></li>
+<li><a href="#Class_Vector2">Class Vector2 </a></li>
+<li><a href="#Class_Vector3">Class Vector3 </a></li>
+<li><a href="#Class_Base">Class Base </a></li>
+<li><a href="#Class_Point">Class Point </a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>class</strong></li>
+  <li><a href="../modules/expect.html">expect</a></li>
+  <li><a href="../modules/extras.html">extras</a></li>
+  <li><a href="../modules/functional.html">functional</a></li>
+  <li><a href="../modules/log.html">log</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/object.html">object</a></li>
+  <li><a href="../classes/tilemap.html">tilemap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>class</code></h1>
+<p>Basic classes</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>License</strong>: GNU GPLv3</li>
+        <li><strong>Author</strong>: Bowuigi</li>
+    </ul>
+
+
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#classes.object">classes.object</a></td>
+	<td class="summary">Requires <a href="../classes/object.html#">object</a>, <a href="../modules/expect.html#">expect</a> and <a href="../modules/log.html#">log</a></td>
+	</tr>
+</table>
+<h2><a href="#Class_Vector2">Class Vector2 </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#classes.Vector2:new">classes.Vector2:new (x, y)</a></td>
+	<td class="summary">Create a Vector2
+ <br>
+ Do not call this function directly, use <code>Vector2(x,y)</code> instead, which will return a Vector2 instead of just being the constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#classes.Vector2:copy">classes.Vector2:copy ()</a></td>
+	<td class="summary">Make a copy of a Vector2, useful for functions</td>
+	</tr>
+</table>
+<h2><a href="#Class_Vector3">Class Vector3 </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#classes.Vector3:new">classes.Vector3:new (x, y, z)</a></td>
+	<td class="summary">Create a Vector3
+ <br>
+ Do not call this function directly, use <code>Vector3(x,y)</code> instead, which will return a Vector3 instead of just being the constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#classes.Vector3:copy">classes.Vector3:copy ()</a></td>
+	<td class="summary">Make a copy of a Vector3, useful for functions</td>
+	</tr>
+</table>
+<h2><a href="#Class_Base">Class Base </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#classes.Base:new">classes.Base:new (onCreate, onDestroy)</a></td>
+	<td class="summary">Create a Base object
+ <br>
+ You usually don't want to do this, but to use <code>Base:extend()</code> instead, which is useful to add your own stuff</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#classes.Base:destroy">classes.Base:destroy ()</a></td>
+	<td class="summary">Destroy a Base object</td>
+	</tr>
+</table>
+<h2><a href="#Class_Point">Class Point </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#classes.Point:new">classes.Point:new (position, rotation, speed, mass)</a></td>
+	<td class="summary">Create a new Point
+ <br>
+ Do not call this function directly, use <code>Point(position, rotation, speed, mass)</code></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#classes.Point:setSpeed">classes.Point:setSpeed (speed)</a></td>
+	<td class="summary">Set the speed of a Point</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#classes.Point:setPosition">classes.Point:setPosition (position)</a></td>
+	<td class="summary">Set the position of a Point</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "classes.object"></a>
+    <strong>classes.object</strong>
+    </dt>
+    <dd>
+    Requires <a href="../classes/object.html#">object</a>, <a href="../modules/expect.html#">expect</a> and <a href="../modules/log.html#">log</a>
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_Vector2"></a>Class Vector2 </h2>
+
+          <div class="section-description">
+          A simple two dimensional Vector for storing coordinates
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "classes.Vector2:new"></a>
+    <strong>classes.Vector2:new (x, y)</strong>
+    </dt>
+    <dd>
+    Create a Vector2
+ <br>
+ Do not call this function directly, use <code>Vector2(x,y)</code> instead, which will return a Vector2 instead of just being the constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X coordinate of the vector
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y coordinate of the vector
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "classes.Vector2:copy"></a>
+    <strong>classes.Vector2:copy ()</strong>
+    </dt>
+    <dd>
+    Make a copy of a Vector2, useful for functions
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../modules/class.html#Vector2">Vector2</a></span>
+        The same Vector, but copied
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_Vector3"></a>Class Vector3 </h2>
+
+          <div class="section-description">
+          A simple three dimensional Vector for storing coordinates
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "classes.Vector3:new"></a>
+    <strong>classes.Vector3:new (x, y, z)</strong>
+    </dt>
+    <dd>
+    Create a Vector3
+ <br>
+ Do not call this function directly, use <code>Vector3(x,y)</code> instead, which will return a Vector3 instead of just being the constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X coordinate of the vector
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y coordinate of the vector
+        </li>
+        <li><span class="parameter">z</span>
+            <span class="types"><span class="type">number</span></span>
+         Z coordinate of the vector
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "classes.Vector3:copy"></a>
+    <strong>classes.Vector3:copy ()</strong>
+    </dt>
+    <dd>
+    Make a copy of a Vector3, useful for functions
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../modules/class.html#Vector3">Vector3</a></span>
+        The same Vector, but copied
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_Base"></a>Class Base </h2>
+
+          <div class="section-description">
+          Base class for most object in the game
+ <br>
+ Allows for a create and a destroy functions
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "classes.Base:new"></a>
+    <strong>classes.Base:new (onCreate, onDestroy)</strong>
+    </dt>
+    <dd>
+    Create a Base object
+ <br>
+ You usually don't want to do this, but to use <code>Base:extend()</code> instead, which is useful to add your own stuff
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">onCreate</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to run when the Base object is created
+        </li>
+        <li><span class="parameter">onDestroy</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to run when the Base object is destroyed
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "classes.Base:destroy"></a>
+    <strong>classes.Base:destroy ()</strong>
+    </dt>
+    <dd>
+    Destroy a Base object
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">nil</span></span>
+        A nil value so you can assign what used to be the base
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="comment">-- Create a base
+</span>myBase = Base((<span class="keyword">function</span>() <span class="global">print</span>(<span class="string">"Base created"</span>) <span class="keyword">end</span>), (<span class="keyword">function</span>() <span class="global">print</span>(<span class="string">"Base destroyed"</span>) <span class="keyword">end</span>)) <span class="comment">-- Prints: "Base created"
+</span>
+<span class="comment">-- Destroy the base
+</span>myBase = myBase:destroy() <span class="comment">-- Prints: "Base destroyed"</span></pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Class_Point"></a>Class Point </h2>
+
+          <div class="section-description">
+          A Point that contains position, rotation and more physics information
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "classes.Point:new"></a>
+    <strong>classes.Point:new (position, rotation, speed, mass)</strong>
+    </dt>
+    <dd>
+    Create a new Point
+ <br>
+ Do not call this function directly, use <code>Point(position, rotation, speed, mass)</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><a class="type" href="../modules/class.html#Vector2">Vector2</a></span>
+         Coordinates of the Point
+        </li>
+        <li><span class="parameter">rotation</span>
+            <span class="types"><span class="type">number</span></span>
+         Rotation of the Point (in radians)
+        </li>
+        <li><span class="parameter">speed</span>
+            <span class="types"><a class="type" href="../modules/class.html#Vector2">Vector2</a></span>
+         Speed at which the point moves (in px/s)
+        </li>
+        <li><span class="parameter">mass</span>
+            <span class="types"><span class="type">number</span></span>
+         Mass of the Point (in grams)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "classes.Point:setSpeed"></a>
+    <strong>classes.Point:setSpeed (speed)</strong>
+    </dt>
+    <dd>
+    Set the speed of a Point
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">speed</span>
+            <span class="types"><a class="type" href="../modules/class.html#Vector2">Vector2</a></span>
+         Speed at which the point moves (in px/s)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "classes.Point:setPosition"></a>
+    <strong>classes.Point:setPosition (position)</strong>
+    </dt>
+    <dd>
+    Set the position of a Point
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><a class="type" href="../modules/class.html#Vector2">Vector2</a></span>
+         Position of the point
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-10-14 17:27:30 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
