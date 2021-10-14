@@ -5,7 +5,7 @@
 -- @license GNU GPLv3
 local extras = {}
 
---- Evaluate every item on a table that looks like this
+--- Evaluate every item on a table that looks like the one in the usage information
 -- @usage
 -- print(select {
 --  	-- Expression, return value
